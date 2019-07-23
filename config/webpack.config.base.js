@@ -32,9 +32,12 @@ module.exports = {
                 test: /\.js|jsx$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['react', 'es2015']
-                }  
+                // query: {
+                //     presets: ['react', 'es2015'],
+                //     plugins: [
+                //         "dynamic-import-webpack"
+                //     ]
+                // }  
                 //同时支持es6 react 或者下面的写法都可以  
             },
             {

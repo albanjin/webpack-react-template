@@ -14,12 +14,16 @@ export class HomePage extends React.Component {
                 homePage
 
                 <WingBlank>
-                    <Button>default</Button><WhiteSpace />
+                    <Button onClick={this.btnHandel.bind(this)}>default</Button><WhiteSpace />
                     <Button disabled>default disabled</Button><WhiteSpace />
                 </WingBlank>
 
             </div>
         )
+    }
+    btnHandel(){
+        // console.log(this.props)
+        this.props.history.push('/about')
     }
 }
 

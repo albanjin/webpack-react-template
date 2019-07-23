@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
 import {Route,HashRouter} from 'react-router-dom'
+import Loadable from 'react-loadable';
+// import { Spin } from 'antd';
 
-import HomePage from '@/pages/homePage/HomePage.jsx'
-// console.log('HomePage',HomePage)
-import OtherPage from '@/pages/otherPage/index.jsx'
-// const HomePage1 = r => require.ensure([], () => r(require('@/pages/homePage/index.jsx')), 'HomePage')
-// console.log(HomePage1)
-// const OtherPage1 = r => require.ensure([], () => r(require('@/pages/otherPage/index.jsx')), 'OtherPage')
+
+import Spin from 'antd/es/spin';
+import 'antd/es/spin/style/index.css';
+import './loading.scss'
 
 const Loading =()=>{
     return (
-        <div>loading</div>
+        <div className="Loading" >
+            <Spin tip="Loading..."></Spin>
+        </div>
+        
     ) 
 }
+const HomePage = Loadable({
+    loader: () => import('../pages/homePage/HomePage.jsx'),
+    loading: Loading
+});
+
+const OtherPage = Loadable({
+    loader: () => import('@/pages/otherPage/index.jsx'),
+    loading: Loading
+});  
 
 // const  HomePage = Loadable({  loader: () => import('@/pages/homePage/HomePage.jsx'), loading: Loading})
 
