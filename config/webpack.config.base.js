@@ -1,16 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// return false
-
-
-// console.log( path.resolve('src'))
 
 module.exports = {
-    mode: 'production',
+    // mode: 'production',
     entry: {
         polyfill:'babel-polyfill',
         index:'./src/index.js'
@@ -68,9 +62,8 @@ module.exports = {
             hash: true,
             minify: {
                 collapseWhitespace: true, //把生成的 index.html 文件的内容的没用空格去掉，减少空间
-              }
+            }
         }),
-        // new CleanWebpackPlugin(['dist']),
         new webpack.ProvidePlugin({
             React: 'react',
             Loadable : 'react-loadable'
