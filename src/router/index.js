@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Route,HashRouter} from 'react-router-dom'
 import Loadable from 'react-loadable';
-// import { Spin } from 'antd';
 
 
 import Spin from 'antd/es/spin';
@@ -17,7 +16,7 @@ const Loading =()=>{
     ) 
 }
 const HomePage = Loadable({
-    loader: () => import('../pages/homePage/HomePage.jsx'),
+    loader: () => import(/* webpackChunkName: "homePage" */ '../pages/homePage/HomePage.jsx'),
     loading: Loading
 });
 
@@ -25,8 +24,6 @@ const OtherPage = Loadable({
     loader: () => import('@/pages/otherPage/index.jsx'),
     loading: Loading
 });  
-
-// const  HomePage = Loadable({  loader: () => import('@/pages/homePage/HomePage.jsx'), loading: Loading})
 
 export class RoutersJs extends Component {
     render() {
