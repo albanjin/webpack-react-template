@@ -1,6 +1,8 @@
 import axios from 'axios';
 import sf from 'string-format';
 
+// [axios中文文档](https://www.kancloud.cn/yunye/axios/234845)
+
 const axiosInstance = axios.create({
 
     baseURL:'https://ttt.ebanktest.com.cn:10500/showdata/',
@@ -21,8 +23,8 @@ axiosInstance.interceptors.response.use(res => {
     console.log(error)
 });
 
-export const getFnc = (url, params, pathVariable = null) => axiosInstance.get(sf(url, pathVariable), params);
+export const get = (url, params, pathVariable = null) => axiosInstance.get(sf(url, pathVariable), params);
 
-export const postFnc = (url, params, pathVariable = null) => axiosInstance.post(sf(url, pathVariable), params);
+export const post = (url, params, pathVariable = null) => axiosInstance.post(sf(url, pathVariable), params);
 
 // more request method ... put delete patch
