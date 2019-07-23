@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress  --config  config/webpack.config.dev.js",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --progress  --config config/webpack.config.dev.js --open",
     "prebuild": "node ./config/clearnFile.js",
     "build": "webpack  --progress --color  --config config/webpack.config.pro.js",
     "build1": "webpack --progress --color  --mode=production --config config/webpack.config.dev.js"
