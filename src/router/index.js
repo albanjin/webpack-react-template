@@ -12,7 +12,6 @@ const Loading =()=>{
         <div className="Loading" >
             <Spin tip="Loading..."></Spin>
         </div>
-        
     ) 
 }
 const HomePage = Loadable({
