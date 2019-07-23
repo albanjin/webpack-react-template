@@ -5,13 +5,13 @@ import sf from 'string-format';
 
 const axiosInstance = axios.create({
 
-    baseURL:'https://ttt.ebanktest.com.cn:10500/showdata/',
+    // baseURL:'https://ttt.ebanktest.com.cn:10500/showdata/',
     timeout: 30000
 });
 axiosInstance.interceptors.request.use(function (config) {
-    if (localStorage.getItem('csrf-token')) {
-        config.headers.Authorization = localStorage.getItem('csrf-token');
-    }
+    // if (localStorage.getItem('csrf-token')) {
+    //     config.headers.Authorization = localStorage.getItem('csrf-token');
+    // }
     return config;
 }, function (error) {
     return Promise.reject(error);
