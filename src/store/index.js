@@ -1,6 +1,6 @@
 //暂未搭建
 import { createStore } from 'redux'
-import {TESTDATE} from './types'
+import {TESTDATE,TESTDATE1} from './types'
 
 const defaultState = {
   inputVal : '122'

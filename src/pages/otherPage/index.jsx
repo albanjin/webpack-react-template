@@ -1,7 +1,8 @@
 // import React, { Component } from 'react'
 
-import {Button}  from 'antd-mobile'
+import {Button,WhiteSpace}  from 'antd-mobile'
 import {connect}  from 'react-redux'
+import {TESTDATE} from '../../store/types'
 
 class OtherPage extends React.Component {
     constructor(props){
@@ -15,6 +16,12 @@ class OtherPage extends React.Component {
                 <Button type="success" onClick={
                     this.Buttonhandel.bind(this)
                 }> 返回首页</Button>
+                <WhiteSpace/>
+                <Button type="primary" 
+                    onClick={()=>{ this.props.changeInputVal(this.props.inputVal) }}>减一</Button>
+                <WhiteSpace/>    
+                <Button type="" 
+                    onClick={()=>{ this.props.changeInputVal(this.props.inputVal / 1 + 2) }}>+一</Button>
             </div>
         )
     }
@@ -31,6 +38,14 @@ const mapStateToProps = state=>{
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeInputVal(inputVal){
+            const action = {
+                type :TESTDATE,
+                inputVal :  inputVal - 1
+            }
+            dispatch(action)
+
+        }
 
     }
 }
