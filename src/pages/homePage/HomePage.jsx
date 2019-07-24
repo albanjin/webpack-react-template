@@ -1,7 +1,10 @@
-// import React, { Component } from 'react'
 
-// import { DatePicker } from 'antd-mobile';
-import { Button, WhiteSpace, WingBlank } from 'antd-mobile';
+
+import { Button, WhiteSpace, WingBlank } from 'antd-mobile'
+
+import { connect } from 'react-redux'
+
+import {TESTDATE}  from '../../store/types'
 
 
 export class HomePage extends React.Component {
@@ -18,6 +21,11 @@ export class HomePage extends React.Component {
                     <Button disabled>default disabled</Button><WhiteSpace />
                 </WingBlank>
 
+                <div className="test">
+                    {this.props.inputVal}
+                    <Button onClick={()=>{ this.props.changeInputVal(this.props.inputVal)}}>增加1</Button>
+                </div>
+
             </div>
         )
     }
@@ -26,8 +34,26 @@ export class HomePage extends React.Component {
         this.props.history.push('/about')
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        inputVal : state.inputVal
+    }
+}
 
-export default HomePage
+const dispathchToProps  =  (dispatch) => {
+    return {
+        changeInputVal(inputVal){
+
+            const action = {
+                type:TESTDATE,
+                inputVal:Number(inputVal ) + 1
+            }
+            dispatch(action)
+        }
+    }
+}
+
+export default connect(mapStateToProps,dispathchToProps)(HomePage)
 
 // module.exports = {HomePage}
 

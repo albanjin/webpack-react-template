@@ -1,0 +1,1 @@
+export const TESTDATE = 'test_date'
