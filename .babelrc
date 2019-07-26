@@ -15,7 +15,7 @@
       "syntax-dynamic-import",
       "transform-runtime",
        ["import", 
-        { libraryName: "antd-mobile", style: "css" }
+        { "libraryName": "antd-mobile", "style": "css" }
       ],
        "dynamic-import-webpack"
       

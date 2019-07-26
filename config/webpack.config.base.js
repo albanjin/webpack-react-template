@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     // mode: 'production',
@@ -15,7 +15,7 @@ module.exports = {
         filename: 'js/[name].[hash:8].js',
     },
     resolve: {
-        extensions: ['.js', 'jsx', 'json', 'less', 'scss'],
+        extensions: ['.js', '.jsx', '.json', '.less', '.scss'],
         alias: {
             '@': path.resolve('src'),
         }
@@ -36,11 +36,11 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders:['style-loader','css-loader']
+                loaders:['style-loader',MiniCssExtractPlugin.loader,'css-loader']
             },
             {
                 test: /\.scss$/,
-                loaders:['style-loader','css-loader','sass-loader']
+                loaders:['style-loader',MiniCssExtractPlugin.loader,'css-loader','sass-loader']
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -67,6 +67,9 @@ module.exports = {
         new webpack.ProvidePlugin({
             React: 'react',
             Loadable : 'react-loadable'
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/style.css'
         })
     ]
 }
