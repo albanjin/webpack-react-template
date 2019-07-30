@@ -3,19 +3,24 @@ import {Route,HashRouter} from 'react-router-dom'
 import Loadable from 'react-loadable';
 
 
-import Spin from 'antd/es/spin';
-import 'antd/es/spin/style/index.css';
+// import Spin from 'antd/es/spin';
+// import 'antd/es/spin/style/index.css';
 import './loading.scss'
+import {Icon} from 'antd-mobile'
 
-const Loading =()=>{
+const Loading = ()=>{
     return (
-        <div className="Loading" >
-            <Spin tip="Loading..."></Spin>
-        </div>
+        <div className="Loading-box">
+            <div className="Loading" >
+                {/* <Spin tip="Loading..."></Spin> */}
+                <Icon type="loading" size="lg"/>
+            </div>
+            <div className="loading-desc">Loading...</div>
+        </div> 
     ) 
 }
 const HomePage = Loadable({
-    loader: () => import(/* webpackChunkName: "homePage" */ '../pages/homePage/HomePage.jsx'),
+    loader: () => import(/* webpackChunkName: "homePage" */ '../pages/homePage/HomePage'),
     loading: Loading
 });
 
