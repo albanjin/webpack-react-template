@@ -40,7 +40,14 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loaders:['style-loader',MiniCssExtractPlugin.loader,'css-loader','sass-loader']
+                use:['style-loader',MiniCssExtractPlugin.loader,'css-loader',{
+                    loader: 'px2rem-loader',
+                    // options here
+                    options: {
+                      remUni: 75,
+                      remPrecision: 8
+                    }
+                  },'sass-loader']
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

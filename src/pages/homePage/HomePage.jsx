@@ -5,6 +5,7 @@ import { Button, WhiteSpace, WingBlank } from 'antd-mobile'
 import { connect } from 'react-redux'
 
 import {TESTDATE}  from '../../store/types'
+import './index.scss'
 
 
 export class HomePage extends React.Component {
@@ -15,6 +16,7 @@ export class HomePage extends React.Component {
         return (
             <div >
                 homePage
+                <div className="test-rem">12222</div>
 
                 <WingBlank>
                     <Button onClick={this.btnHandel.bind(this)}>default</Button><WhiteSpace />

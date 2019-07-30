@@ -1,5 +1,6 @@
 import './index.css';
 // import 'antd-mobile/dist/antd-mobile.css';
+import 'lib-flexible'
 
 import React from 'react';
 import ReactDOM from 'react-dom';
