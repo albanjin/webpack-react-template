@@ -39,6 +39,11 @@ module.exports = {
                 loaders:['style-loader',MiniCssExtractPlugin.loader,'css-loader']
             },
             {
+                // less-loader
+                test: /\.less$/,
+                loaders:['style-loader',MiniCssExtractPlugin.loader,'css-loader','less-loader']
+            },
+            {
                 test: /\.scss$/,
                 use:['style-loader',MiniCssExtractPlugin.loader,'css-loader',{
                     loader: 'px2rem-loader',

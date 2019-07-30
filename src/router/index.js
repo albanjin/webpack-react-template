@@ -5,7 +5,7 @@ import Loadable from 'react-loadable';
 
 // import Spin from 'antd/es/spin';
 // import 'antd/es/spin/style/index.css';
-import './loading.scss'
+import './loading'
 import {Icon} from 'antd-mobile'
 
 const Loading = ()=>{
